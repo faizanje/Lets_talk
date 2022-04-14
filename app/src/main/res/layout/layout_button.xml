@@ -16,16 +16,6 @@
         android:paddingVertical="10dp"
         android:layout_height="wrap_content">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/btnDelete"
-            android:background="?actionBarItemBackground"
-
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_baseline_delete_24"
-            />
-
 
         <ImageView
             android:id="@+id/btnImage"
@@ -45,6 +35,17 @@
             android:layout_centerHorizontal="true"
             android:textStyle="normal"
             />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelete"
+            android:background="?actionBarItemBackground"
+
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            />
+
 
     </RelativeLayout>
 

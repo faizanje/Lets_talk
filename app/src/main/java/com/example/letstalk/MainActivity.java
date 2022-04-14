@@ -1,9 +1,12 @@
 package com.example.letstalk;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.letstalk.databinding.ActivityMainBinding;
+import com.example.letstalk.ui.Constants;
+import com.example.letstalk.utils.DBUtils;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +14,6 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
 
 
 import io.paperdb.Paper;
@@ -25,11 +27,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        Paper.init(getApplicationContext());
-//        super.getActionBar().hide();
 
+        if (DBUtils.getIsFirstTime()) {
+            Log.d(Constants.TAG, "onCreate: getIsFirstTime true");
+            DBUtils.saveIsFirstTime(false);
+            for (int i = 0; i < 7; i++) {
+                Log.d(Constants.TAG, "onCreate: item " + Constants.DATA.get(i));
+                DBUtils.saveItem(Constants.DATA.get(i));
+            }
+        }else{
+            Log.d(Constants.TAG, "onCreate: getIsFirstTime false");
+        }
 
         setContentView(binding.getRoot());
+
+
 
 
         BottomNavigationView navView = findViewById(R.id.nav_view);

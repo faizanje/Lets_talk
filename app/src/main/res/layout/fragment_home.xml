@@ -60,14 +60,16 @@
         </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
         android:id="@+id/rvHome"
-        android:layout_below="@id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/layout"
 
-         />
+        android:layout_marginTop="0dp" />
 
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/extendedFAB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
