@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="#FFD6D6"
+    app:cardUseCompatPadding="true"
+    android:layout_margin="6dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:paddingHorizontal="15dp"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnDelete"
+            android:background="?actionBarItemBackground"
+
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            />
+
+
+        <ImageView
+            android:id="@+id/btnImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/i" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:textSize="20dp"
+            android:id="@+id/tvPhrase"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_below="@id/btnImage"
+            android:layout_centerHorizontal="true"
+            android:textStyle="normal"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>
