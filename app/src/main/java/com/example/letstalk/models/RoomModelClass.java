@@ -11,8 +11,16 @@ public class RoomModelClass {
     int btnImage;
     String btnText;
 
+    public RoomModelClass() {
+    }
+
+    public RoomModelClass(String id, int btnImage, String btnText) {
+        this.id = id;
+        this.btnImage = btnImage;
+        this.btnText = btnText;
+    }
+
     public RoomModelClass(int btnImage, String btnText) {
-        id = UUID.randomUUID().toString();
         this.btnImage = btnImage;
         this.btnText = btnText;
     }

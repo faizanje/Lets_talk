@@ -28,16 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        if (DBUtils.getIsFirstTime()) {
-            Log.d(Constants.TAG, "onCreate: getIsFirstTime true");
-            DBUtils.saveIsFirstTime(false);
-            for (int i = 0; i < 7; i++) {
-                Log.d(Constants.TAG, "onCreate: item " + Constants.DATA.get(i));
-                DBUtils.saveItem(Constants.DATA.get(i));
-            }
-        }else{
-            Log.d(Constants.TAG, "onCreate: getIsFirstTime false");
-        }
+
 
         setContentView(binding.getRoot());
 

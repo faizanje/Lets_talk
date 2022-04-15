@@ -42,11 +42,19 @@ public class HomeAdapterV2 extends RecyclerView.Adapter<HomeAdapterV2.MyViewHold
         holder.binding.btnImage.setImageResource(roomModelClass.getBtnImage());
         holder.binding.tvPhrase.setText(roomModelClass.getBtnText());
 
-        holder.binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (onRoomModelClassClickListener != null) {
                     onRoomModelClassClickListener.onRoomModelClassClicked(holder.getAdapterPosition(), roomModelClass);
+                }
+            }
+        });
+        holder.binding.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onRoomModelClassClickListener != null) {
+                    onRoomModelClassClickListener.onDeleteClicked(holder.getAdapterPosition(), roomModelClass);
                 }
             }
         });
@@ -61,6 +69,7 @@ public class HomeAdapterV2 extends RecyclerView.Adapter<HomeAdapterV2.MyViewHold
 
     public interface OnRoomModelClassClickListener {
         void onRoomModelClassClicked(int position, RoomModelClass roomModelClass);
+        void onDeleteClicked(int position, RoomModelClass roomModelClass);
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
